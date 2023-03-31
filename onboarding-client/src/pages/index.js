@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import App from "./_app";
 import { useState } from "react";
 import Navbar from "./navbar";
+import axios from "axios";
 
 function Home() {
   const [active, setactive] = useState(false);
@@ -12,35 +13,63 @@ function Home() {
   const [Organization, setOrganization] = useState("");
   const [Email, setEmail] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("clicked");
+    const data = {
+      name: Name,
+      organization: Organization,
+      email: Email,
+    };
+
+    try{
+      const res = await axios.post("https://3.108.21.249:5050/api/accessKey", data);
+      console.log(res);
+    }catch(err){
+      console.log(err);
+    }
+
+  };
+
   return (
-    <div className="login-box">
+    <div className="">
       <form>
-        <div class="user-box">
-          <label>
-            <h2>Name</h2>
-          </label>
-          <input type="text" name="name" value={Name}/>
-        </div>
-        <div class="user-box">
-          <input type="text" name="organization" required=""></input>
-          <label>
-            <h2>Organization</h2>
-          </label>
-        </div>
-        <div class="user-box">
-          <input type="text" name="email" required=""></input>
-          <label>
-            <h2>Email</h2>
-          </label>
+        <div className="">
+          <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            value={Email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
         </div>
 
-        <button
-          id="button"
-          style={{
-            backgroundColor: active ? "green" : "",
-          }}
-        >
-          {active ? "Generating api access key... " : "Generate api access key"}
+        <div className="">
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            value={Name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+        </div>
+        <div className="">
+          <label>Organization</label>
+          <input
+            type="text"
+            name="organization"
+            value={Organization}
+            onChange={(e) => {
+              setOrganization(e.target.value);
+            }}
+          />
+        </div>
+        <button id="button" onClick={(e)=>handleSubmit(e)}>
+          KEY
         </button>
       </form>
     </div>
