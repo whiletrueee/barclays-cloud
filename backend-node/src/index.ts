@@ -1,4 +1,5 @@
 import express from 'express';
+import api from './api';
 
 import config from './config';
 import Loaders from './loaders';
@@ -8,6 +9,8 @@ async function startServer() {
   const app = express();
 
   await Loaders({ expressApp: app });
+
+  app.use('/api', api);
 
   app
     .listen(config.port, () => {
