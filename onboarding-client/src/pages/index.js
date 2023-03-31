@@ -12,23 +12,31 @@ function Home() {
   const [Name, setName] = useState("");
   const [Organization, setOrganization] = useState("");
   const [Email, setEmail] = useState("");
+  const [apiKey, setApiKey] = useState("");
+  const [fetching, setFetching] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("clicked");
+    setFetching(true);
     const data = {
       name: Name,
-      organization: Organization,
+      organisation: Organization,
       email: Email,
     };
 
-    try{
-      const res = await axios.post("https://3.108.21.249:5050/api/accessKey", data);
+    try {
+      const res = await axios.post(
+        "https://orguser.singhharshit.me/api/accessKey",
+        data
+      );
+      setApiKey(res.data.apiKey);
+      setactive(true);
       console.log(res);
-    }catch(err){
+    } catch (err) {
       console.log(err);
+    } finally {
+      setFetching(false);
     }
-
   };
 
   return (
@@ -57,7 +65,7 @@ function Home() {
             }}
           />
         </div>
-        <div className="">
+        <div className="inputbox">
           <label>Organization</label>
           <input
             type="text"
@@ -68,10 +76,11 @@ function Home() {
             }}
           />
         </div>
-        <button id="button" onClick={(e)=>handleSubmit(e)}>
-          KEY
+        <button id="button" onClick={(e) => handleSubmit(e)}>
+          {fetching ? "Loading..." : "Submit"}
         </button>
       </form>
+      {active ? apiKey : null}
     </div>
   );
 }
