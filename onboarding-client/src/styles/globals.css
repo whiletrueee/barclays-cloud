@@ -7,7 +7,7 @@ body{
   margin: 100px;
   padding:100px;
   font-family: sans-serif;
-  background: linear-gradient(#141e30, #243b55);
+  /* background: linear-gradient(#141e30, #243b55); */
 }
 
 .login-box {
@@ -83,6 +83,7 @@ button{
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 
