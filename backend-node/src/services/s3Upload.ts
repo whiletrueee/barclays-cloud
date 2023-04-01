@@ -42,7 +42,7 @@ export const s3Upload = async (req: Request, res: Response) => {
       });
 
       const params = {
-        Bucket: 'csvbarclay',
+        Bucket: 'barclays-cloud',
         Key: file.originalname,
         Body: data,
       };
