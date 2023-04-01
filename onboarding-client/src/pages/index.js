@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import App from "./_app";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,8 +15,12 @@ function Home() {
   const [Email, setEmail] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [fetching, setFetching] = useState(false);
+  const [s3, setS3] = useState("");
+  const [glue, setGlue] = useState("");
+  const [store_DB, setDBStrore] = useState("");
+
   const notify = () =>
-    toast("Api access key generated", {
+    toast("✅ API Key Copied", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -26,6 +30,29 @@ function Home() {
       progress: undefined,
       theme: "dark",
     });
+
+  const checkStatus = async () => {
+    try {
+      const res = await axios.get("https://orguser.singhharshit.me/api/status");
+      setS3(res.data.s3_status);
+      setGlue(res.data.glue);
+      setDBStrore(res.data.store_DB);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const callInterval = () => {
+    setInterval(() => {
+      checkStatus();
+    }, 3000);
+  };
+
+  useEffect(() => {
+    if (active) {
+      callInterval();
+    }
+  }, [active]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +71,7 @@ function Home() {
       setApiKey(res.data.apiKey);
       setactive(true);
       notify();
-      console.log(res);
+      navigator.clipboard.writeText(apiKey);
     } catch (err) {
       console.log(err);
     } finally {
@@ -53,10 +80,10 @@ function Home() {
   };
 
   return (
-    <>
+    <div className="master">
       <ToastContainer />
       <div className="login-box">
-        <form>
+        <form className="formItems">
           <div className="label">
             <label id="text">Email :</label>
             <input
@@ -82,6 +109,7 @@ function Home() {
               }}
             />
           </div>
+
           <div className="label">
             <label id="text">Organization :</label>
             <input
@@ -94,13 +122,50 @@ function Home() {
               }}
             />
           </div>
-          <button id="button" onClick={(e) => handleSubmit(e)}>
-            {fetching ? "Loading..." : "Submit"}
+          <button
+            disabled={active}
+            id="button"
+            onClick={(e) => handleSubmit(e)}
+          >
+            {fetching && !active
+              ? "Generating Key..."
+              : active
+              ? "User Authenticated"
+              : "Generate Key"}
           </button>
         </form>
-        {active ? apiKey : null}
       </div>
-    </>
+      <div className="login-box">
+        <ol className="orderList">
+          <li className="listItem">
+            S3 Status:{" "}
+            {s3 == "uploading"
+              ? "Uploading file to S3"
+              : s3 == "uploaded"
+              ? "File successfully Uploaded to S3"
+              : null}
+          </li>
+          <li>
+            Glue Status:
+            {glue == "pending"
+              ? "waiting for Apache spark to start"
+              : glue == "processing"
+              ? "Running Apache Spark"
+              : glue == "processed"
+              ? "Processing Complete"
+              : null}
+          </li>
+          <li>
+            Database Status:
+            {store_DB == "pending"
+              ? "waiting for file"
+              : store_DB == "uploaded"
+              ? "File uploaded to database"
+              : null}
+          </li>
+        </ol>
+      </div>
+    </div>
   );
 }
 export default Home;

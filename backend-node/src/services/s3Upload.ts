@@ -27,10 +27,40 @@ export const s3Upload = async (req: Request, res: Response) => {
   try {
     const db = await getDB();
     const collection = db.collection('orgUserData');
+    const filestatusCollection = db.collection('filestatus');
     const validate = await collection.findOne({
       apiKey,
     });
     if (validate) {
+      const found = await filestatusCollection.findOne({
+        pointer: 'statusDisplay',
+      });
+
+      if (found) {
+        await filestatusCollection.updateOne(
+          {
+            pointer: 'statusDisplay',
+          },
+          {
+            $set: {
+              s3_status: 'uploading',
+              glue: 'pending',
+              store_DB: 'pending',
+            },
+          },
+        );
+      } else {
+        const status = {
+          pointer: 'statusDisplay',
+          s3_status: 'uploading',
+          glue: 'pending',
+          store_DB: 'pending',
+        };
+        await filestatusCollection.insertOne({
+          ...status,
+        });
+      }
+
       const data = fs.readFileSync(file.path);
 
       fs.unlink(file.path, err => {
@@ -50,8 +80,19 @@ export const s3Upload = async (req: Request, res: Response) => {
       const command = new PutObjectCommand(params);
       const result = await s3Client.send(command);
       console.log(`File uploaded successfully. ${result}`);
-      res.send('File uploaded successfully to S3');
 
+      await filestatusCollection.updateOne(
+        {
+          pointer: 'statusDisplay',
+        },
+        {
+          $set: {
+            s3_status: 'uploaded',
+            glue: 'processing',
+          },
+        },
+      );
+      res.send('File uploaded successfully to S3');
     } else {
       throw { message: 'Invalid API Key' };
     }
