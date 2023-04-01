@@ -11,8 +11,8 @@ const database_1 = require("../config/database");
 const s3Client = new client_s3_1.S3Client({
     region: 'ap-south-1',
     credentials: {
-        accessKeyId: 'AKIAR3FILEQWNUUYJC7O',
-        secretAccessKey: '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',
+        accessKeyId: '',
+        secretAccessKey: '',
     },
 });
 const s3Upload = async (req, res) => {

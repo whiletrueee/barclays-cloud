@@ -7,8 +7,8 @@ const util_dynamodb_1 = require("@aws-sdk/util-dynamodb");
 const client = new client_dynamodb_1.DynamoDB({
     region: 'ap-south-1',
     credentials: {
-        accessKeyId: 'AKIAR3FILEQWNUUYJC7O',
-        secretAccessKey: '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',
+        accessKeyId: '',
+        secretAccessKey: '',
     },
 });
 const dynamoUpload = async (req, res) => {

@@ -7,8 +7,8 @@ import { getDB } from '../config/database';
 const s3Client = new S3Client({
   region: 'ap-south-1',
   credentials: {
-    accessKeyId: 'AKIAR3FILEQWNUUYJC7O',
-    secretAccessKey: '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',
+    accessKeyId: '',
+    secretAccessKey: '',
   },
 });
 
