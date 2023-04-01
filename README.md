@@ -17,3 +17,4 @@
 
 ## Presentation [link](https://docs.google.com/presentation/d/1Iag2RPmuqI0fnrUGfupfiWtIUGACXibvIzgjkZEi4x0/edit#slide=id.g13e9dbcaf0c_0_512).
 
+## Video [link](https://drive.google.com/file/d/1YVp7Ri_2hxM1cyefVUVlzBxEhfPTZh8Y/view?usp=share_link)
