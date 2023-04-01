@@ -1,4 +1,7 @@
 # Customer Data ingestion pipeline
+
+psssss: Our team won the hackathon 😜 
+
 ### By Team bernoulli (Because our data flows)
 **************************
 
