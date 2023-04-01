@@ -27,10 +27,34 @@ const s3Upload = async (req, res) => {
     try {
         const db = await (0, database_1.getDB)();
         const collection = db.collection('orgUserData');
+        const filestatusCollection = db.collection('filestatus');
         const validate = await collection.findOne({
             apiKey,
         });
         if (validate) {
+            const found = await filestatusCollection.findOne({
+                pointer: 'statusDisplay',
+            });
+            if (found) {
+                await filestatusCollection.updateOne({
+                    pointer: 'statusDisplay',
+                }, {
+                    $set: {
+                        s3_status: 'uploading',
+                        glue: 'pending',
+                        store_DB: 'pending',
+                    },
+                });
+            }
+            else {
+                const status = {
+                    pointer: 'statusDisplay',
+                    s3_status: 'uploading',
+                    glue: 'pending',
+                    store_DB: 'pending',
+                };
+                await filestatusCollection.insertOne(Object.assign({}, status));
+            }
             const data = fs_1.default.readFileSync(file.path);
             fs_1.default.unlink(file.path, err => {
                 if (err) {
@@ -40,13 +64,21 @@ const s3Upload = async (req, res) => {
                 //file removed
             });
             const params = {
-                Bucket: 'csvbarclay',
+                Bucket: 'barclays-cloud',
                 Key: file.originalname,
                 Body: data,
             };
             const command = new client_s3_1.PutObjectCommand(params);
             const result = await s3Client.send(command);
             console.log(`File uploaded successfully. ${result}`);
+            await filestatusCollection.updateOne({
+                pointer: 'statusDisplay',
+            }, {
+                $set: {
+                    s3_status: 'uploaded',
+                    glue: 'processing',
+                },
+            });
             res.send('File uploaded successfully to S3');
         }
         else {
