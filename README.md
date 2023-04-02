@@ -6,11 +6,11 @@ psssss: Our team won the hackathon 😜
 **************************
 
 ### Team Participants
- 
-* Shashank Kumar
-* Anupama Jha
-* Mayank Jha
-* Anupama Jha
+ ## Shout outs 💥
+
+| <p align="center">![Shashank Kumar](https://github.com/shawshankkumar.png?size=128)<br>[Shashank Kumar](https://github.com/shawshankkumar)</p> | <p align="center">![Harshit](https://github.com/whiletrueee.png?size=128)<br>[Harshit Singh](https://github.com/whiletrueee)</p> | <p align="center">![Anupama Jha](https://github.com/mayank1611.png?size=128)<br>[Anupama Jha](https://www.linkedin.com/in/anupama-jha-523bb2207/)</p> | <p align="center">![Mayank Jha](https://github.com/mayank1611.png?size=128)<br>[Mayank Jha](https://www.linkedin.com/in/mayank1611/)</p> |
+| -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |  ------------------------------------------------------------------------------------------------------------------------------------------------------ | 
+
 
 ## Project: Cloud Integration
 
