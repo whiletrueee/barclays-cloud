@@ -1,23 +1,51 @@
-# Customer Data ingestion pipeline
+<div align="center">
+  <img alt="Logo" src="https://user-images.githubusercontent.com/73738347/229346352-b23fb62e-274d-4d0c-a90b-47efb34c162d.png" height="56" />
+</div>
 
-psssss: Our team won the hackathon 😜 
 
-### By Team bernoulli (Because our data flows)
+<br>
+<p align="center">
+Meet Customer Data Ingestion Pipeline.
+</p>
+<p align="center">
+crafted with <span style="color: #8b0000;">&hearts;</span> by your besties <a href="https://github.com/jhaanupama">Anupama</a> , <a href="https://github.com/mayank1611">Mayank</a>, <a href="https://github.com/whiletrueee">Harshit</a> and <a href="https://github.com/shawshankkumar">Shashank</a>.
+</p>
+<p align="center">
+    <img src="https://img.shields.io/badge/version-1.0.0-yellowgreen" alt="version 1.0.0"/>
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="license MIT"/>
+    <img src="https://img.shields.io/badge/author-shashank&harshit-orange" alt="author shashank and harshit"/>
+</p>
+<br>
+
+
+## psssss: Our team won the hackathon 😜 
+
 **************************
 
 ### Team Participants
  ## Shout outs 💥
 
-| <p align="center">![Shashank Kumar](https://github.com/shawshankkumar.png?size=128)<br>[Shashank Kumar](https://github.com/shawshankkumar)</p> | <p align="center">![Harshit](https://github.com/whiletrueee.png?size=128)<br>[Harshit Singh](https://github.com/whiletrueee)</p> | <p align="center">![Anupama Jha](https://github.com/mayank1611.png?size=128)<br>[Anupama Jha](https://www.linkedin.com/in/anupama-jha-523bb2207/)</p> | <p align="center">![Mayank Jha](https://github.com/mayank1611.png?size=128)<br>[Mayank Jha](https://www.linkedin.com/in/mayank1611/)</p> |
+| <p align="center">![Shashank Kumar](https://github.com/shawshankkumar.png?size=128)<br>[Shashank Kumar](https://github.com/shawshankkumar)</p> | <p align="center">![Harshit](https://github.com/whiletrueee.png?size=128)<br>[Harshit Singh](https://github.com/whiletrueee)</p> | <p align="center">![Anupama Jha](https://github.com/jhaanupama.png?size=128)<br>[Anupama Jha](https://www.linkedin.com/in/anupama-jha-523bb2207/)</p> | <p align="center">![Mayank Jha](https://github.com/mayank1611.png?size=128)<br>[Mayank Jha](https://www.linkedin.com/in/mayank1611/)</p> |
 | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |  ------------------------------------------------------------------------------------------------------------------------------------------------------ | 
 
 
-## Project: Cloud Integration
+**************************
 
-## Flow diagram:
+## Planned Flow diagram:
+
+![dataStellar](https://user-images.githubusercontent.com/73738347/229346933-68070c6d-f443-445f-8a45-38049e167ff7.png)
+
+
+**************************
+
+## Final Flow diagram:
 
 ![WhatsApp Image 2023-04-01 at 10 19 21 AM](https://user-images.githubusercontent.com/74819565/229266716-fecb8552-9973-4253-87fb-9d9224c60ebb.jpeg)
 
-## Presentation [link](https://docs.google.com/presentation/d/1Iag2RPmuqI0fnrUGfupfiWtIUGACXibvIzgjkZEi4x0/edit#slide=id.g13e9dbcaf0c_0_512).
+## Presentation: 
 
-## Video [link](https://drive.google.com/file/d/1YVp7Ri_2hxM1cyefVUVlzBxEhfPTZh8Y/view?usp=share_link)
+[BARCLAYS CUSTOMER DATA INGESTION.pdf](https://github.com/shawshankkumar/barclays-cloud/files/11131759/BARCLAYS.CUSTOMER.DATA.INGESTION.pdf)
+
+## Video Demo :
+
+https://user-images.githubusercontent.com/73738347/229346186-660b5bd8-50ee-47b0-89e3-8dc8997d48bb.mp4
