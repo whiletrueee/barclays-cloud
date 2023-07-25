@@ -39,7 +39,6 @@ crafted with <span style="color: #8b0000;">&hearts;</span> by your besties <a hr
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![AmazonDynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
@@ -64,6 +63,17 @@ crafted with <span style="color: #8b0000;">&hearts;</span> by your besties <a hr
 
 [BARCLAYS CUSTOMER DATA INGESTION.pdf](https://github.com/shawshankkumar/barclays-cloud/files/11131759/BARCLAYS.CUSTOMER.DATA.INGESTION.pdf)
 
+## Updated Presentation
+
+[For a later presentation at Barclays](https://docs.google.com/presentation/d/106gvkBV2QoVo9UJ9N60LKP_JxAVkZLR23HY4Fn1ZKuM/edit#slide=id.g4dfce81f19_0_45)
+
 ## Video Demo :
 
 https://user-images.githubusercontent.com/73738347/229346186-660b5bd8-50ee-47b0-89e3-8dc8997d48bb.mp4
+
+## Updated Video Demo :
+
+https://github.com/whiletrueee/barclays-cloud/assets/74819565/88503df8-e5a5-4d27-bfbf-0b1155c493c8
+
+
+
